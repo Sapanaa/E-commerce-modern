@@ -1,23 +1,26 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-interface Props {
-    mode: 'sign-in' | 'sign-up';
-}
+type Props = { variant?: "sign-in" | "sign-up" };
 
-export default function SocialProviders({ mode }: Props) {
-    const label = mode === 'sign-in' ? 'Continue' : 'Sign up';
-
-    return (
-        <div className="space-y-3">
-            <button className="flex w-full items-center justify-center gap-3 rounded-lg border px-4 py-3 text-sm font-medium hover:bg-neutral-50 transition">
-                <Image src="/google.svg" alt="Google" width={18} height={18} />
-                {label} with Google
-            </button>
-
-            <button className="flex w-full items-center justify-center gap-3 rounded-lg border px-4 py-3 text-sm font-medium hover:bg-neutral-50 transition">
-                <Image src="/apple.svg" alt="Apple" width={18} height={18} />
-                {label} with Apple
-            </button>
-        </div>
-    );
+export default function SocialProviders({ variant = "sign-in" }: Props) {
+  return (
+    <div className="space-y-3">
+      <button
+        type="button"
+        className="flex w-full items-center justify-center gap-3 rounded-xl border border-light-300 bg-light-100 px-4 py-3 text-body-medium text-dark-900 hover:bg-light-200 focus:outline-none focus:ring-2 focus:ring-dark-900/10"
+        aria-label={`${variant === "sign-in" ? "Continue" : "Sign up"} with Google`}
+      >
+        <Image src="/google.svg" alt="" width={18} height={18} />
+        <span>Continue with Google</span>
+      </button>
+      <button
+        type="button"
+        className="flex w-full items-center justify-center gap-3 rounded-xl border border-light-300 bg-light-100 px-4 py-3 text-body-medium text-dark-900 hover:bg-light-200 focus:outline-none focus:ring-2 focus:ring-dark-900/10"
+        aria-label={`${variant === "sign-in" ? "Continue" : "Sign up"} with Apple`}
+      >
+        <Image src="/apple.svg" alt="" width={18} height={18} />
+        <span>Continue with Apple</span>
+      </button>
+    </div>
+  );
 }
