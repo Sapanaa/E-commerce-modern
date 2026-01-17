@@ -9,9 +9,9 @@ const FOOTER_LINKS = {
 };
 
 const SOCIALS = [
-    { icon: '/icons/twitter.svg', label: 'Twitter' },
-    { icon: '/icons/facebook.svg', label: 'Facebook' },
-    { icon: '/icons/instagram.svg', label: 'Instagram' },
+    { icon: '/x.svg', label: 'Twitter' },
+    { icon: '/facebook.svg', label: 'Facebook' },
+    { icon: '/instagram.svg', label: 'Instagram' },
 ];
 
 export default function Footer() {
@@ -22,7 +22,7 @@ export default function Footer() {
                     {/* Logo */}
                     <div>
                         <Image
-                            src="/logo-white.svg"
+                            src="/logo.svg"
                             alt="Brand logo"
                             width={48}
                             height={48}
